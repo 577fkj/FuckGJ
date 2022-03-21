@@ -4155,11 +4155,6 @@ html body .grid-row-3column {
     color: #333
 }
 
-#app,
-#app .app-wrapper {
-    height: 100%
-}
-
 #app .app-wrapper {
     background: #fff
 }
