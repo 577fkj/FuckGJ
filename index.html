@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark" data-dpr="1" style="font-size: 40px;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style class="darkreader darkreader--fallback" media="screen"></style>
+    <style class="darkreader darkreader--text" media="screen"></style>
+    <style class="darkreader darkreader--inline" media="screen">
+        [data-darkreader-inline-bgcolor] {
+            background-color: var(--darkreader-inline-bgcolor) !important;
+        }
+        
+        [data-darkreader-inline-bgimage] {
+            background-image: var(--darkreader-inline-bgimage) !important;
+        }
+        
+        [data-darkreader-inline-border] {
+            border-color: var(--darkreader-inline-border) !important;
+        }
+        
+        [data-darkreader-inline-border-bottom] {
+            border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+        }
+        
+        [data-darkreader-inline-border-left] {
+            border-left-color: var(--darkreader-inline-border-left) !important;
+        }
+        
+        [data-darkreader-inline-border-right] {
+            border-right-color: var(--darkreader-inline-border-right) !important;
+        }
+        
+        [data-darkreader-inline-border-top] {
+            border-top-color: var(--darkreader-inline-border-top) !important;
+        }
+        
+        [data-darkreader-inline-boxshadow] {
+            box-shadow: var(--darkreader-inline-boxshadow) !important;
+        }
+        
+        [data-darkreader-inline-color] {
+            color: var(--darkreader-inline-color) !important;
+        }
+        
+        [data-darkreader-inline-fill] {
+            fill: var(--darkreader-inline-fill) !important;
+        }
+        
+        [data-darkreader-inline-stroke] {
+            stroke: var(--darkreader-inline-stroke) !important;
+        }
+        
+        [data-darkreader-inline-outline] {
+            outline-color: var(--darkreader-inline-outline) !important;
+        }
+        
+        [data-darkreader-inline-stopcolor] {
+            stop-color: var(--darkreader-inline-stopcolor) !important;
+        }
+    </style>
+    <style class="darkreader darkreader--variables" media="screen">
+         :root {
+            --darkreader-neutral-background: #131516;
+            --darkreader-neutral-text: #d8d4cf;
+            --darkreader-selection-background: #004daa;
+            --darkreader-selection-text: #e8e6e3;
+        }
+    </style>
+    <style class="darkreader darkreader--root-vars" media="screen"></style>
+    <style class="darkreader darkreader--user-agent" media="screen">
+        html {
+            background-color: #181a1b !important;
+        }
+        
+        html {
+            color-scheme: dark !important;
+        }
+        
+        html,
+        body,
+        input,
+        textarea,
+        select,
+        button {
+            background-color: #181a1b;
+        }
+        
+        html,
+        body,
+        input,
+        textarea,
+        select,
+        button {
+            border-color: #736b5e;
+            color: #e8e6e3;
+        }
+        
+        a {
+            color: #3391ff;
+        }
+        
+        table {
+            border-color: #545b5e;
+        }
+        
+         ::placeholder {
+            color: #b2aba1;
+        }
+        
+        input:-webkit-autofill,
+        textarea:-webkit-autofill,
+        select:-webkit-autofill {
+            background-color: #404400 !important;
+            color: #e8e6e3 !important;
+        }
+        
+         ::selection {
+            background-color: #004daa !important;
+            color: #e8e6e3 !important;
+        }
+        
+         ::-moz-selection {
+            background-color: #004daa !important;
+            color: #e8e6e3 !important;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1,maximum-scale=1,user-scalable=no;">
+    <title>智慧食堂</title>
+    <link href="./fuck/app.9346e9184d1fc7a86133602b0a719226.css" rel="stylesheet">
+    <style class="darkreader darkreader--sync" media="screen"></style>
+    <style>
+        html,
+        body,
+        #app {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        #loader {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            width: 300px;
+            height: 300px;
+            margin: -150px 0 0 -150px;
+            border-radius: 50%;
+            border: 1px solid #eeecec;
+            /* -webkit-animation: spin 2s rowar infinite; */
+            /* Chrome, Opera 15+, Safari 5+ */
+            /* -ms-animation: spin 2s rowar infinite; */
+            /* Chrome, Opera 15+, Safari 5+ */
+            /* -moz-animation: spin 2s rowar infinite; */
+            /* Chrome, Opera 15+, Safari 5+ */
+            /* -o-animation: spin 2s rowar infinite; */
+            /* Chrome, Opera 15+, Safari 5+ */
+            /* animation: spin 2s rowar infinite; */
+            /* Chrome, Firefox 16+, IE 10+, Opera */
+            z-index: 1001;
+        }
+        
+        #loader:before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 50%;
+            border: 1px solid #eeecec;
+        }
+        
+        #loader:after {
+            content: "";
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            right: 80px;
+            bottom: 80px;
+            border-radius: 50%;
+            border: 1px solid #eeecec;
+        }
+        
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+                /* Chrome, Opera 15+, Safari 3.1+ */
+                -ms-transform: rotate(0deg);
+                /* IE 9 */
+                transform: rotate(0deg);
+                /* Firefox 16+, IE 10+, Opera */
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                /* Chrome, Opera 15+, Safari 3.1+ */
+                -ms-transform: rotate(360deg);
+                /* IE 9 */
+                transform: rotate(360deg);
+                /* Firefox 16+, IE 10+, Opera */
+            }
+        }
+        
+        @keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+                /* Chrome, Opera 15+, Safari 3.1+ */
+                -ms-transform: rotate(0deg);
+                /* IE 9 */
+                transform: rotate(0deg);
+                /* Firefox 16+, IE 10+, Opera */
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                /* Chrome, Opera 15+, Safari 3.1+ */
+                -ms-transform: rotate(360deg);
+                /* IE 9 */
+                transform: rotate(360deg);
+                /* Firefox 16+, IE 10+, Opera */
+            }
+        }
+        
+        #loader .center {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            right: 100px;
+            bottom: 100px;
+            border-radius: 50%;
+            border: 1px solid #eeecec;
+            display: flex;
+            flex-direction: column;
+            z-index: 99999;
+        }
+        
+        #loader .row {
+            width: 350px;
+            height: 1px;
+            background: #eeecec;
+            position: absolute;
+        }
+        
+        #loader .row1 {
+            transform: translate(-25px, 0);
+        }
+        
+        #loader .row2 {
+            transform: translate(-25px, 19px);
+        }
+        
+        #loader .row3 {
+            transform: translate(-25px, 79px);
+        }
+        
+        #loader .rowcenter {
+            transform: translate(-25px, 148px);
+        }
+        
+        #loader .row4 {
+            transform: translate(-25px, 218px);
+        }
+        
+        #loader .row5 {
+            transform: translate(-25px, 278px);
+        }
+        
+        #loader .row6 {
+            transform: translate(-25px, 298px);
+        }
+        
+        #loader .col {
+            position: absolute;
+            width: 1px;
+            height: 350px;
+            background: #eeecec;
+        }
+        
+        #loader .col1 {
+            transform: translate(-3px, -30px);
+        }
+        
+        #loader .col2 {
+            transform: translate(78px, -30px);
+        }
+        
+        #loader .colcenter {
+            transform: translate(148px, -30px);
+        }
+        
+        #loader .col3 {
+            transform: translate(220px, -30px);
+        }
+        
+        #loader .col4 {
+            transform: translate(300px, -30px);
+        }
+        
+        #loader .tilt45 {
+            width: 420px;
+            background: #eeecec;
+            transform: rotate(45deg);
+            transform-origin: left center;
+            -webkit-transform: rotate(45deg);
+        }
+        
+        #loader .tilt135 {
+            width: 420px;
+            background: #eeecec;
+            transform: translate(300px, -0px) rotate(135deg);
+            transform-origin: left center;
+            -webkit-transform: translate(300px, -0px) rotate(135deg);
+        }
+        
+        #loader .center .welcome {
+            font-size: 16px;
+            color: #00C3AC;
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        
+        #loader .center .welcome div {
+            text-align: center;
+        }
+        
+        #loader .center .app-name {
+            font-size: 20px;
+            color: #00C3AC;
+            text-align: center;
+            flex: 1;
+            font-weight: 500;
+        }
+        
+        .circular {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 5px 5px 5px #dad7d7;
+            z-index: 99999;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .sz1 {
+            width: 70px;
+            height: 70px;
+            line-height: 100px;
+            font-size: 13px;
+        }
+        
+        .sz2 {
+            width: 50px;
+            height: 50px;
+            line-height: 65px;
+            font-size: 10px;
+        }
+        
+        .sz3 {
+            width: 25px;
+            height: 25px;
+        }
+        
+        .sz4 {
+            width: 10px;
+            height: 10px;
+            background: #FF9EBD;
+            left: 210px;
+            top: 260px;
+        }
+        
+        .wk {
+            background: url(./static/img/wk.png) no-repeat center 14px #FFCD66;
+            background-size: 40px 25px;
+            left: 160px;
+            top: -20px;
+        }
+        
+        .zy {
+            background: url(./static/img/zy.png) no-repeat center 10px #FF6B85;
+            background-size: 32px 32px;
+            left: -10px;
+            top: 110px;
+        }
+        
+        .rl {
+            background: url(./static/img/rl.png) no-repeat center 10px #34DDC5;
+            background-size: 28px 28px;
+            left: 65px;
+            top: 250px;
+        }
+        
+        .kc {
+            background: url(./static/img/kcq.png) no-repeat center 5px #68B6FF;
+            background-size: 20px 20px;
+            left: 245px;
+            top: 160px;
+        }
+        
+        .yd {
+            background: url(./static/img/yd.png) no-repeat center 4px #68B6FF;
+            background-size: 20px 20px;
+            left: 100px;
+            top: 60px;
+        }
+        
+        .black1 {
+            background: #FF9EBD;
+            left: 160px;
+            top: 180px;
+        }
+        
+        .black2 {
+            background: #34DDC5;
+            left: 280px;
+            top: 90px;
+        }
+    </style>
+    <style class="darkreader darkreader--sync" media="screen"></style>
+    <meta name="darkreader" content="38fab21b333c46529386f44fc3d464e3">
+    <style class="darkreader darkreader--override" media="screen">
+        .vimvixen-hint {
+            background-color: #7b5300 !important;
+            border-color: #d8b013 !important;
+            color: #f3e8c8 !important;
+        }
+        
+         ::placeholder {
+            opacity: 0.5 !important;
+        }
+        
+        #edge-translate-panel-body,
+        .MuiTypography-body1 {
+            color: var(--darkreader-neutral-text) !important;
+        }
+        
+        gr-main-header {
+            background-color: #0f3a48 !important;
+        }
+    </style>
+</head>
+
+<body style="font-size: 12px;" class="">
+    <div id="app">
+        <div class="app-wrapper">
+            <section data-v-27d44609="" class="wrapper-content">
+                <div data-v-2ecbe7ef="" data-v-27d44609="" class="wrappercontent-index">
+                    <div data-v-2ecbe7ef="">
+                        <div data-v-2ecbe7ef="" class="index-header"><span data-v-2ecbe7ef="" class="companyName">
+        智慧食堂</span></div>
+                    </div>
+                    <div data-v-2ecbe7ef="" class="index-banner">
+                        <div data-v-2ecbe7ef="" class="van-swipe">
+                            <div class="van-swipe__track" style="transition-duration: 0ms; transform: translateX(0px); width: 400px;">
+                                <div data-v-2ecbe7ef="" class="van-swipe-item" style="width: 400px;"><img data-v-2ecbe7ef="" src="./fuck/banner.33fea46.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-2ecbe7ef="" class="index-plate">
+                        <div data-v-2ecbe7ef="" class="plate-label">
+                            我的饭卡
+                        </div>
+                        <div data-v-2ecbe7ef="" class="flex-row-between divider">
+                            <div data-v-2ecbe7ef="" class="flex-average flex-column-between-center plate-item">
+                                <div data-v-2ecbe7ef="" class="count-up"><span data-v-2ecbe7ef="" id="money"></span></div>
+                                <div data-v-2ecbe7ef="" class="illus">饭卡余额</div>
+                            </div>
+                            <div data-v-2ecbe7ef="" class="flex-average flex-column-between-center plate-item">
+                                <div data-v-2ecbe7ef="" class="qrcode"><img data-v-2ecbe7ef="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1NEFDMUNBNzVCMzQxMUU5OUU3MUY5RURGMzgwRjRFMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1NEFDMUNBODVCMzQxMUU5OUU3MUY5RURGMzgwRjRFMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU0QUMxQ0E1NUIzNDExRTk5RTcxRjlFREYzODBGNEUwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU0QUMxQ0E2NUIzNDExRTk5RTcxRjlFREYzODBGNEUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+uCY23QAAAU5JREFUeNrs3UFOg0AAQFEw3GhYuNNbFU8gHKu7LrhThSZNTJUyyBSBvp+wqUyhL8CAxrQIIZyz8fKB12/H1t3yMbJO6vfvq7rlc2QbU8bG7s+PXjIlDShQoEAFFChQAQUKVECBAgUqoECBCihQoAIKFKiAAgUKVECBAhVQoEAFFOhmK7qlmTH+duwxYp3U7993itjOnLHRnyUPITisZtS2rVPeNRQoUAEFClTT6+9DDyvcr9OdG/Frr93y9g9jrx2GnpTqFYLWER/sPfv9X7ofPfb7uk5511CgQJWw4s7PmgW2PzTbbqFmKmi1wE5VGwa9+Pj1nWsoUKBaZpaf9Ayb4Nl8a10cyrKcDVr/cczeQD3Lu4YCFVCgQN2HPkF19qA//ThCgQIFKqCbnuXzvc/UjlCgQAUU6O5n+fPK9z3mG2ocoU55AQUK9Hn7EmAACF8yiu88CsQAAAAASUVORK5CYII="></div>
+                                <div data-v-2ecbe7ef="" class="illus">我的E卡</div>
+                            </div>
+                        </div>
+                        <div data-v-2ecbe7ef="" class="recharge">充值</div>
+                    </div>
+                    <div data-v-2ecbe7ef="" class="index-plate">
+                        <div data-v-2ecbe7ef="" class="plate-label">智慧食堂</div>
+                        <div data-v-2ecbe7ef="" class="flex-row-center">
+                            <div data-v-2ecbe7ef="" class="flex-average flex-column-around-center menu"><img data-v-2ecbe7ef="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAEKklEQVRoQ+2aXWgcVRTH/2e60boJ1VJKfalPtkIJRS2UggkigrClwYfuvZvkKb4EREgIlaBUYR/8ami1DYr6UOiTSe7dEDTWCCIsrUIfXEWMUD9IoXlRkhqVZLXNdI7c2CyT7ezH7GZ3dsPM495zz/n/5tx7z9mZITTQJYR4mJlfJaKjAFoBfEtEp5RS05XKpEonbua8WCy2o62t7RUAAwDuzfPN5net9buVxAwa0JJS9jHz6wAeLAJwC8BBrfVPfiEDA5RSPsHM5wAcKlP0Ra31sTJtc2Z1B+zu7t5r2/YIESUAeMW/DmCYiCxm/igPKKa1/twPZN0AhRD3MfPwHfHRfJHMnAVgwEe01v+YcSFEGsCTLturc3NzBzOZzGq5kHUBjMfj3eY0BPCQhzBm5olIJDI8Pj4+7x4XQjwK4BsA29Z/Z+ahVCp1tiEAE4nE447jmH3WUUBQhogGlVJfFxIshPgQQL9rfCkSiewfGxtbLAeyJhns6enZY9u2ORmfA2B5CPmNiE4qpS4AcIoJFULsBvAzgAdcWfwglUo9X3dAIcQ9AAYBmJq2w0PATQCjy8vLr83MzPxdjkBjI6UcYua3Xfa3bds+NDU19X0pH5uWQSllFzOfAbCvQNBPAJzQWv9aSlT+eH9/f8vS0tIPAB5xjaW11k+V8lU1oBDiADO/Q0TPFAj2I4AhrfUXpcQUG5dSHmXmi24bIoorpSaLzasYsLe3d6dt20lmNnuhxSPIH8ycXFxcfD+dTtvVwK3PFUJ8BiDm8nVtYWHhQDqd/reQ/xxgV1dXNBqN7nMc564a5TH58J2meJfHmDk0LjPzaSK6sRlg6z4cx9lvWdZ5d9kgorPMrNZtLMvKZrPZX6anp01d/b+TkFK+wMxvAWjbTEEB+lomopeUUu+RECIOQAcoppahhQE0nUK5DW8txdTCd8YAmtpk6tfaRURNnU1mFq47dcsAmj+UuUtrXfHJWosU+PWZzxMC+r2DQduHGdz6e3BAyqCXWTXxxajKdTVrVeGuU3TAPCpp3kuMTmwQHwI2Wy5LZ3AwsWENNx3guYkNZ0hY6Jsug3mtZ5jBMIMNdgfCXnTr96LhH94G23R5cqrbg19NHgE7ez0RyZpHx/ErQeNXDnh58jTAJ4oD0Bl0Hn8xSMgqAFN/Ari/hPi/0BnPveYKArQawEsAOouKJlxCR9z9yrnujJUDXvl4D1ZXhwHy3oPgebS0jODIs7/XncoVsHLAIFX7iB0Chp2Mj+UShGm4RMMlGsS68xHTa4nedn+sw8xN/WSbiNxPBR3zTMZ83VegePu4dY1pOk9SyjeY+eXG1FedKiJ6k/r6+ravrKx8CuDp6tw13OwvW1tbj629rk4mk9bs7KzZe48RUaThpPoQxMzmo6Pv2tvbVTKZdJr6fXw53Fse8D9sWvGtqYH2rgAAAABJRU5ErkJggg==">                                <span data-v-2ecbe7ef="">钱包</span></div>
+                            <div data-v-2ecbe7ef="" class="flex-average flex-column-around-center menu"><img data-v-2ecbe7ef="" src="data:image/png;base64,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">                                <span data-v-2ecbe7ef="">订餐</span></div>
+                            <div data-v-2ecbe7ef="" class="flex-average flex-column-around-center menu"><img data-v-2ecbe7ef="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABQElEQVRoQ+2a3RHCIAzHwyA6iQ6gz2UG7xzIO2eAZx1AJ7GD4Olde/QDSI/Uhpq+Fmh+yT+hNFVQ+KUKtx8GAFVVHZRSVwDYLAxXO+dO1tp7zI4BgNb6xcD4xubaGLOdCuAW9nzn8caYqMzHItACpCbPBaq1RtsgAHNEYZUR8KA61akYCflRAYC2OpUKAE2BKQbgk2tjuTEd4HZ5gIMdSfIqeMLxvO+vFUpiASDxOmKReSOAMCB3iAA0HuT2LkSTxLn6QMwXCUUlJPuAp6FFNjKEhnOHSA5IGc3UkEho3RKSfUD2ga8H/vhMnFkiMdOljK67jGI0kDlGJJTpQNLp/rkceyZm22JCAXBu8qEASONPvJgAhD5xEzs6uBxJBHqdkl/ZPnhO8GUuZRGTRni4xZQCYFCl4k2+FAC3+8X/rfIGfFTqQJSXTpAAAAAASUVORK5CYII=">                                <span data-v-2ecbe7ef="">账单</span></div>
+                            <div data-v-2ecbe7ef="" class="flex-average flex-column-around-center menu"><img data-v-2ecbe7ef="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAAEgBckRAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAMKADAAQAAAABAAAAMAAAAADbN2wMAAAFLklEQVRoBe1ZTYgcRRR+1WMS4x8kJ0E3GCSoCGpQJKyzkICgWRFdZn9OiiAIHjx5UsGbevHmzYO5eNndaSUu/iBoAtOuKwQxlyiICUkGj6uQDbizO12+qu6qfvXTv7PDHrIDM/3qve99r/5e/UwDjP7pdblL4leG5yXSa3Q5PJq5uTknWKarz9sL/3aiZHyZSeiYKBLjYHl5+UAGSSRi14pNKUVfnrbBQHSOI/TC69pByeqpDXlCTlcEAm+EEkAFTuQ1xSlwt9GCkJenZmVHKL14GoTUUEVm1Bu71GGfn5//gHP+riCTdupQJYJo9EADfV3o02UOnvmteiwFyW7VDkogo6tUxU+LlYL9ERjb1oNH0Y5sM3Pesh3lOOj+j1aOAN+8ahBZI6+nhgS1X7yGT2fwKIFw6KvB05EIAm03sHiXUAm7ZFtYWDgdx/E3BCdEb/ZZGFnE6fMhTp93LFsfA0xInaiRqpUFalxUfP5ha0xbxzFJZme1dChKcLvYAqeqqCiprc+lWQsKlwRfGJ8uCk/hMn7JZzJ0YqUoCChbIOax+BqO7c45AP6I7Jao+6thE4XVs8eljQ9F/kS2PU04kKlMkkSutRqs8j4Kv7YXDYi3Ymi1noXJmR803hRkNptrhQnISu3OC1nhVpPkYocDIjb9+2njGWMfLS0tmWNCAURGf3Ha2E9UEATB9OLi4rcqDwzyFFi+TFBGSzZWZ7XyWZjGRcGnOFULGpOVOe5iAJH+VQ4Mfpw43mRHHG8zq66cJbhd7CJvs+orS1rA+galv78RYuEMpzqFkv72UZW0wOdST9csQJXpm9ajWQAef1qvHT501P0DxL5c9umF14oSMr8FHB4Czn/Ebz6m1/0J9+0JKGiRdMaVT5yIzQ+DL6QiCoewdvYx04ilXvci/k5K/VQnOeSmIHqIUHuy3KBTe/Joz3bwOHIBa/gkbG1dRELDrAts331aTgV6iMhvvgBPdZ6CoPUcMOZuPoytgDh1tF9yr+ckomoBUVniMzPfo6a4IpYLLTZ2pCRFsm6B2uII+AbeUO4h5VzR4yuw5jqW632rG/SVFbvROXsVdM4GDs/dBfbapjTX3XT0M+kLrJ5DiNNnO3F99vuNT1ulQ8hc1XUde5aNr8kJ814Dxt3DZfw6B/CyJP7teQufnxQ6yes2T+cgnuWsjbLQ12esweerY/1kFedG+lG3dKqrI4/It5cDdTp7HFidA5XJWWtan0BZ8EauX9W5XZUvJ1D9HMghctQjzm2HL0exlwM5HeOq5a2XvOByEY004xsBzt7Hq8p2VivcM4pyJgPWkurnQBRewavmA0kU9g8caD0OT7+cvTqsE/6Xr47C1uA34JBePNh13BiP1KGoPwK4Y2cB+CHY3MaLd/g5rK4ezPQl0oWVO/DGugSDweWs8ugTwHslno5ZjwAeVdV/qeUvm1a/OwzDm3jvVkcKwsvgPE6dzyAOLuG7rb9gYx8DNnwQYPgoQPw6VniKoBORsatwZ/AEHJ/517ERha+OdB/Yn2LVk7ha4uTz66iZgCvnbof+Ov7Pwl/RCA4ncYqdxAoDbAgtPs3Dh4bi/2Jn4N6Db8Kx6eS1N7HkiKpu6pm8jcgBl6uPnvoPQa+mX4C17jHYZq9h+QR+H8aGHMYn1pOto/w7BOxniOEMzvPLUr8DP3QERqc7MfsnktSex6ME9jaAXN183AM81n6M7yl2tKLpy9u3MaCeHr7gtk6vQuLlBxr7NsBXxntD7qz24XdY10/rusO0u0T3P4PK7JvToXTtAAAAAElFTkSuQmCC">                                <span data-v-2ecbe7ef="">人脸绑定</span></div>
+                        </div>
+                    </div>
+                    <div data-v-2ecbe7ef="" class="index-forU">
+                        <div data-v-2ecbe7ef="" class="plate-label">热门推荐</div>
+                        <div data-v-2ecbe7ef="" class="forU">
+                            <div data-v-2ecbe7ef="" class="wangjiedai"><img data-v-2ecbe7ef="" src="./fuck/newtup.a8ef8d8.png"></div>
+                            <div data-v-2ecbe7ef="" class="zhiyadaiAndkuainongdai"><img data-v-2ecbe7ef="" src="./fuck/wjd.88bf6c7.png"> <img data-v-2ecbe7ef="" src="./fuck/mszq.650636e.png"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript" src="./fuck/fuck.js"></script>
+</body>
+
+</html>
